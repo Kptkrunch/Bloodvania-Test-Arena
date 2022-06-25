@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // get reference to the animation state
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // on trigger enter
+        // if tag == player
+            // isLadder = true;
 }
