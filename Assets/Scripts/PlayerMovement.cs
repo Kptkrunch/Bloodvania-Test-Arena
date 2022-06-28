@@ -6,23 +6,26 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 10f;
+    [SerializeField] float jumpSpeed = 10f;
 
     Vector2 moveInput;
     Rigidbody2D playerRB2D;
     Animator playerAnimator;
+    CapsuleCollider2D playerCollider;
+    bool isGrounded;
 
     void Start()
     {
-
         playerRB2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
     {
-
         Run();
         FlipSprite();
+        Jump();
     }
 
     void OnMove(InputValue value)
@@ -30,6 +33,17 @@ public class PlayerMovement : MonoBehaviour
         moveInput = value.Get<Vector2>();
         // Debug.Log(moveInput.x);
         // Debug.Log(moveInput.y);
+    }
+
+    void OnJump(InputValue value) {
+
+        if(!playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
+            return;
+        }
+
+        if(value.isPressed) {
+            playerRB2D.velocity += new Vector2(0f, jumpSpeed);
+        }
     }
 
     // Player actions
@@ -45,6 +59,21 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("isRunning", true);
         } else {
             playerAnimator.SetBool("isRunning", false);
+        }
+    }
+
+    void Jump() {
+
+        if(playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
+            isGrounded = true;
+        } else {
+            isGrounded = false;
+        }
+
+        if(!isGrounded) {
+            playerAnimator.SetBool("isJumping", true);
+        } else {
+            playerAnimator.SetBool("isJumping", false);
         }
     }
 
