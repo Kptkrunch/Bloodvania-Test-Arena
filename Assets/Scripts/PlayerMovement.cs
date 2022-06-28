@@ -9,11 +9,13 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 moveInput;
     Rigidbody2D playerRB2D;
+    Animator playerAnimator;
 
     void Start()
     {
 
         playerRB2D = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -30,13 +32,23 @@ public class PlayerMovement : MonoBehaviour
         // Debug.Log(moveInput.y);
     }
 
+    // Player actions
     void Run()
-    {
+    {   
+        float isMoving = Mathf.Sign(playerRB2D.velocity.x);
         Vector2 playerVelocity = new Vector2 (moveInput.x * runSpeed, playerRB2D.velocity.y);
-        Debug.Log(playerVelocity);
+        // Debug.Log(playerVelocity);
         playerRB2D.velocity = playerVelocity;
+
+
+        if(Mathf.Abs(playerRB2D.velocity.x) > Mathf.Epsilon) {
+            playerAnimator.SetBool("isRunning", true);
+        } else {
+            playerAnimator.SetBool("isRunning", false);
+        }
     }
 
+    // Sprite functionality
     void FlipSprite() {
         bool playerHasHorizontalSpeed = Mathf.Abs(playerRB2D.velocity.x) > Mathf.Epsilon;
 
