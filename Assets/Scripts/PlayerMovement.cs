@@ -14,22 +14,19 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D playerCollider;
     bool isGrounded;
 
-    void Start()
-    {
+    void Start() {
         playerRB2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerCollider = GetComponent<CapsuleCollider2D>();
     }
 
-    void Update()
-    {
+    void Update() {
         Run();
         FlipSprite();
         Jump();
     }
 
-    void OnMove(InputValue value)
-    {
+    void OnMove(InputValue value) {
         moveInput = value.Get<Vector2>();
         // Debug.Log(moveInput.x);
         // Debug.Log(moveInput.y);
@@ -47,8 +44,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Player actions
-    void Run()
-    {   
+    void Run() {   
         float isMoving = Mathf.Sign(playerRB2D.velocity.x);
         Vector2 playerVelocity = new Vector2 (moveInput.x * runSpeed, playerRB2D.velocity.y);
         // Debug.Log(playerVelocity);
