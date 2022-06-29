@@ -28,8 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue value) {
         moveInput = value.Get<Vector2>();
-        // Debug.Log(moveInput.x);
-        // Debug.Log(moveInput.y);
     }
 
     void OnJump(InputValue value) {
@@ -47,9 +45,7 @@ public class PlayerMovement : MonoBehaviour
     void Run() {   
         float isMoving = Mathf.Sign(playerRB2D.velocity.x);
         Vector2 playerVelocity = new Vector2 (moveInput.x * runSpeed, playerRB2D.velocity.y);
-        // Debug.Log(playerVelocity);
         playerRB2D.velocity = playerVelocity;
-
 
         if(Mathf.Abs(playerRB2D.velocity.x) > Mathf.Epsilon) {
             playerAnimator.SetBool("isRunning", true);
