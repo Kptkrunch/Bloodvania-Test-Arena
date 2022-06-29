@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         bool playerHasHorizontalSpeed = Mathf.Abs(playerRB2D.velocity.x) > Mathf.Epsilon;
 
         if(playerHasHorizontalSpeed) {
-            transform.localScale = new Vector2(Mathf.Sign(-playerRB2D.velocity.x), 1.0f);
+            transform.localScale = new Vector2(Mathf.Sign(playerRB2D.velocity.x), 1.0f);
         }
     }
 
