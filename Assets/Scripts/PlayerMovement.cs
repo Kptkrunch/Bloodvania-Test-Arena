@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(!playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
             return;
-        }
+        } 
 
         if(value.isPressed) {
             playerRB2D.velocity += new Vector2(0f, jumpSpeed);
@@ -63,9 +63,13 @@ public class PlayerMovement : MonoBehaviour
 
         if(playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
             isGrounded = true;
+        } else if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
+            isGrounded = true;
         } else {
             isGrounded = false;
         }
+
+
 
         if(!isGrounded) {
             playerAnimator.SetBool("isJumping", true);
@@ -79,11 +83,8 @@ public class PlayerMovement : MonoBehaviour
         isLaddering = playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
 
         if(!isLaddering) {
-            return;
-        }
-
-        if(!isLaddering) {
             playerRB2D.gravityScale = playerStartingGravity;
+            Debug.Log(playerStartingGravity);
             return;
         }
 
