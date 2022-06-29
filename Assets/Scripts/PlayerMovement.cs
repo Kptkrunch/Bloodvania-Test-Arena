@@ -13,13 +13,15 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRB2D;
     Animator playerAnimator;
     CapsuleCollider2D playerCollider;
+    float playerStartingGravity;
     bool isGrounded;
-    bool isClimbing;
+    bool isLaddering;
 
     void Start() {
         playerRB2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerCollider = GetComponent<CapsuleCollider2D>();
+        playerStartingGravity = playerRB2D.gravityScale;
     }
 
     void Update() {
@@ -74,20 +76,27 @@ public class PlayerMovement : MonoBehaviour
 
     void ClimbLadder() {
 
-        if(!playerCollider.IsTouchingLayers(LayerMask.GetMask("Climb"))) {
-            isClimbing = false;
-        } else {
-            isClimbing = true;
+        isLaddering = playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+
+        if(!isLaddering) {
+            return;
         }
 
-        if(isClimbing) {
-            playerAnimator.SetBool("isClimbing", true);
-        } else {
-            playerAnimator.SetBool("isClimbing", false);
+        if(!isLaddering) {
+            playerRB2D.gravityScale = playerStartingGravity;
+            return;
         }
-        
-        Vector2 playerVelocity = new Vector2(playerRB2D.velocity.x, moveInput.y * climbSpeed);
+
+        if(isLaddering) {
+            playerAnimator.SetBool("isJumping", false);
+        }
+
+        Vector2 climbVelocity = new Vector2(playerRB2D.velocity.x, moveInput.y * climbSpeed);
         playerRB2D.velocity = climbVelocity;
+        playerRB2D.gravityScale = 0f;
+        bool climbingLadder = Mathf.Abs(playerRB2D.velocity.y) > Mathf.Epsilon;
+        playerAnimator.SetBool("isLaddering", climbingLadder);
+
     }
 
     // Sprite functionality
