@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Player actions
     void Run() {   
+
         float isMoving = Mathf.Sign(playerRB2D.velocity.x);
         Vector2 playerVelocity = new Vector2 (moveInput.x * runSpeed, playerRB2D.velocity.y);
         playerRB2D.velocity = playerVelocity;
@@ -69,8 +70,6 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
 
-
-
         if(!isGrounded) {
             playerAnimator.SetBool("isJumping", true);
         } else {
@@ -84,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
 
         if(!isLaddering) {
             playerRB2D.gravityScale = playerStartingGravity;
-            Debug.Log(playerStartingGravity);
             return;
         }
 
@@ -97,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
         playerRB2D.gravityScale = 0f;
         bool climbingLadder = Mathf.Abs(playerRB2D.velocity.y) > Mathf.Epsilon;
         playerAnimator.SetBool("isLaddering", climbingLadder);
-
     }
 
     // Sprite functionality
