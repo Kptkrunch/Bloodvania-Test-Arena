@@ -466,7 +466,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -490,7 +490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.882428, y: -49.138924, z: -10}
+  m_LocalPosition: {x: -11.881202, y: -54.14335, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -872,6 +872,7 @@ MonoBehaviour:
   runSpeed: 8
   jumpSpeed: 20
   climbSpeed: 5
+  hitImpact: {x: 10, y: 10}
 --- !u!61 &988002370
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57255,6 +57256,8 @@ MonoBehaviour:
   - m_Hash: -781419500
     m_ParentHash: 756556552
   - m_Hash: -1508429987
+    m_ParentHash: 756556552
+  - m_Hash: 210207006
     m_ParentHash: 756556552
 --- !u!1 &2106693248
 GameObject:

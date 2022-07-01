@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     bool isAlive = true;
     bool isGrounded;
     bool isLaddering;
+    [SerializeField] Vector2 hitImpact = new Vector2(2f, 2f);
 
     void Start() {
         playerRB2D = GetComponent<Rigidbody2D>();
@@ -118,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
         if(playerBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
             isAlive = false;
             playerAnimator.SetTrigger("isHurt");
+            playerRB2D.velocity = hitImpact;
         } 
     }
 
