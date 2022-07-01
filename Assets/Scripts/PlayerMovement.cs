@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D playerRB2D;
     Animator playerAnimator;
-    CapsuleCollider2D playerCollider;
+    CapsuleCollider2D playerBodyCollider;
+    BoxCollider2D playerFeetCollider;
     float playerStartingGravity;
     bool isGrounded;
     bool isLaddering;
@@ -20,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
     void Start() {
         playerRB2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        playerCollider = GetComponent<CapsuleCollider2D>();
+        playerBodyCollider = GetComponent<CapsuleCollider2D>();
+        playerFeetCollider = GetComponent<BoxCollider2D>();
         playerStartingGravity = playerRB2D.gravityScale;
     }
 
@@ -37,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value) {
 
-        if(!playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
+        if(!playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
             return;
         } 
 
@@ -62,9 +64,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump() {
 
-        if(playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
+        if(playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
             isGrounded = true;
-        } else if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
+        } else if (playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
             isGrounded = true;
         } else {
             isGrounded = false;
@@ -79,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ClimbLadder() {
 
-        isLaddering = playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+        isLaddering = playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
 
         if(!isLaddering) {
             playerRB2D.gravityScale = playerStartingGravity;
