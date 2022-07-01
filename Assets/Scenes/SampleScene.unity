@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 164434830}
   - component: {fileID: 164434831}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: layer5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515506491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.29, y: -59, z: -10}
+  m_LocalPosition: {x: -11.88, y: -59.039, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -466,7 +466,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -490,7 +490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.291183, y: -54.151665, z: -10}
+  m_LocalPosition: {x: -11.882428, y: -49.138924, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 988002366}
   - component: {fileID: 988002368}
   - component: {fileID: 988002369}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: PlayerCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988002360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.29, y: -59, z: 0}
+  m_LocalPosition: {x: -11.88, y: -59.039, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -908,7 +908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1038651273}
   - component: {fileID: 1038651274}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: layer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1202945209}
   - component: {fileID: 1202945210}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: layer4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1444293971}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 1463945105}
   - component: {fileID: 1463945104}
   - component: {fileID: 1463945103}
-  m_Layer: 7
+  m_Layer: 20
   m_Name: CaveMidground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -53698,7 +53698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1517503786}
   - component: {fileID: 1517503787}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: layer3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53782,7 +53782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1549316804}
   - component: {fileID: 1549316805}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55151,7 +55151,11 @@ GameObject:
   - component: {fileID: 1931154443}
   - component: {fileID: 1931154442}
   - component: {fileID: 1931154444}
-  m_Layer: 0
+  - component: {fileID: 1931154446}
+  - component: {fileID: 1931154445}
+  - component: {fileID: 1931154447}
+  - component: {fileID: 1931154448}
+  m_Layer: 16
   m_Name: EnemyKnight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55218,7 +55222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931154441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23, y: -58.99, z: 0}
+  m_LocalPosition: {x: -35.7, y: -58.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55245,6 +55249,82 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &1931154445
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931154441}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.077194214, y: -0.34053612}
+  m_Size: {x: 1.3181915, y: 3.3208733}
+  m_Direction: 0
+--- !u!50 &1931154446
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931154441}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!114 &1931154447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931154441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4b1232014fbb3429e84492a08fe6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+--- !u!61 &1931154448
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931154441}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.57933044, y: -1.437437}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 8}
+    newSize: {x: 3.84, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07451248, y: 1.7732735}
+  m_EdgeRadius: 0
 --- !u!1 &1963592648
 GameObject:
   m_ObjectHideFlags: 0
@@ -55309,7 +55389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963592648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.29, y: -59, z: -10}
+  m_LocalPosition: {x: -11.88, y: -59.039, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55345,7 +55425,7 @@ GameObject:
   - component: {fileID: 1992869673}
   - component: {fileID: 1992869675}
   - component: {fileID: 1992869674}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: CaveForeground
   m_TagString: Background
   m_Icon: {fileID: 0}
@@ -57188,7 +57268,7 @@ GameObject:
   - component: {fileID: 2106693251}
   - component: {fileID: 2106693250}
   - component: {fileID: 2106693252}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: CaveBackground
   m_TagString: Background
   m_Icon: {fileID: 0}

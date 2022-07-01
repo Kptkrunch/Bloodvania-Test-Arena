@@ -7,16 +7,17 @@ TagManager:
   - Ground
   - Background
   - Bouncy
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Enemy
-  - Ground
+  - Player
   - Background
+  - 
   - 
   - 
   - 
@@ -24,11 +25,11 @@ TagManager:
   - Ladder
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - InteractiveBG
-  - 
+  - Ground
   - 
   - 
   - 
